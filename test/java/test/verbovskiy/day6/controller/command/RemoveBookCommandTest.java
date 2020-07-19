@@ -29,9 +29,9 @@ public class RemoveBookCommandTest {
         CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
         CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
         CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
-        Library.getInstance().addBook(book1);
-        Library.getInstance().addBook(book2);
-        Library.getInstance().addBook(book3);
+        Library.getInstance().add(book1);
+        Library.getInstance().add(book2);
+        Library.getInstance().add(book3);
         Map<String, Object> expected = new HashMap<>();
         expected.put(CommandParameter.RESPONSE_STATUS, CommandParameter.RESPONSE_STATUS_FAIL);
         Map<String, Object> actionParameters = new HashMap<>();
@@ -49,9 +49,9 @@ public class RemoveBookCommandTest {
         CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
         CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
         CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
-        Library.getInstance().addBook(book1);
-        Library.getInstance().addBook(book2);
-        Library.getInstance().addBook(book3);
+        Library.getInstance().add(book1);
+        Library.getInstance().add(book2);
+        Library.getInstance().add(book3);
         Map<String, Object> expected = new HashMap<>();
         expected.put(CommandParameter.RESPONSE_STATUS, CommandParameter.RESPONSE_STATUS_SUCCESS);
         Map<String, Object> actionParameters = new HashMap<>();

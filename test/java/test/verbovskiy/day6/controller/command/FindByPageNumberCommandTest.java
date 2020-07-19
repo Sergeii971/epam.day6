@@ -30,9 +30,9 @@ public class FindByPageNumberCommandTest {
         CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
         CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
         CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
-        Library.getInstance().addBook(book1);
-        Library.getInstance().addBook(book2);
-        Library.getInstance().addBook(book3);
+        Library.getInstance().add(book1);
+        Library.getInstance().add(book2);
+        Library.getInstance().add(book3);
         List<CustomBook> books = new ArrayList<>();
         books.add(book1);
         Map<String, Object> expected = new HashMap<>();
@@ -49,9 +49,9 @@ public class FindByPageNumberCommandTest {
         CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
         CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
         CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
-        Library.getInstance().addBook(book1);
-        Library.getInstance().addBook(book2);
-        Library.getInstance().addBook(book3);
+        Library.getInstance().add(book1);
+        Library.getInstance().add(book2);
+        Library.getInstance().add(book3);
         List<CustomBook> books = new ArrayList<>();
         books.add(book2);
         Map<String, Object> expected = new HashMap<>();

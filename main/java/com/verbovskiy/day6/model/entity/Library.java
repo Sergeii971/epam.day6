@@ -20,7 +20,7 @@ public class Library {
         return instance;
     }
 
-    public boolean addBook(CustomBook book) {
+    public boolean add(CustomBook book) {
         boolean result = true;
 
         if (books.contains(book)) {
@@ -31,7 +31,7 @@ public class Library {
         return result;
     }
 
-    public boolean removeBook(CustomBook book) {
+    public boolean remove(CustomBook book) {
         boolean result = true;
         if (!books.contains(book)) {
            result = false;

@@ -17,14 +17,14 @@ public class BookListDaoImpl implements BookListDao {
 
     @Override
     public void add(CustomBook book) throws DaoException {
-        if ((book == null) || (!Library.getInstance().addBook(book))) {
+        if ((book == null) || (!Library.getInstance().add(book))) {
             throw new DaoException("incorrect data");
         }
     }
 
     @Override
     public void remove(CustomBook book) throws DaoException {
-       if ((book == null) || (!Library.getInstance().removeBook(book))) {
+       if ((book == null) || (!Library.getInstance().remove(book))) {
            throw new DaoException("incorrect data");
        }
     }
