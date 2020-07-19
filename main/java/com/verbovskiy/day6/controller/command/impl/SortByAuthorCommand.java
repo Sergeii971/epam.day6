@@ -2,7 +2,7 @@ package com.verbovskiy.day6.controller.command.impl;
 
 import com.verbovskiy.day6.controller.command.ActionCommand;
 import com.verbovskiy.day6.controller.command.CommandParameter;
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 import com.verbovskiy.day6.model.service.LibraryService;
 
 import java.util.HashMap;
@@ -14,7 +14,7 @@ public class SortByAuthorCommand implements ActionCommand {
     public Map<String, Object> execute(Map<String, Object> actionParameters) {
         Map<String, Object> response = new HashMap<>();
         LibraryService libraryService = new LibraryService();
-        List<Book> books = libraryService.sortBooksByAuthor();
+        List<CustomBook> books = libraryService.sortBooksByAuthor();
 
         response.put(CommandParameter.RESPONSE_STATUS, CommandParameter.RESPONSE_STATUS_SUCCESS);
         response.put(CommandParameter.RESPONSE_RESULT, books);

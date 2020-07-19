@@ -3,7 +3,7 @@ package com.verbovskiy.day6.controller.command.impl;
 import com.verbovskiy.day6.controller.command.ActionCommand;
 import com.verbovskiy.day6.controller.command.CommandParameter;
 import com.verbovskiy.day6.exception.ServiceException;
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 import com.verbovskiy.day6.model.service.LibraryService;
 
 import java.util.HashMap;
@@ -16,7 +16,7 @@ public class RemoveBookCommand implements ActionCommand {
         Map<String, Object> response = new HashMap<>();
         LibraryService libraryService = new LibraryService();
 
-        Book book = new Book((String) actionParameters.get(CommandParameter.BOOK_NAME),
+        CustomBook book = new CustomBook((String) actionParameters.get(CommandParameter.BOOK_NAME),
                 (String) actionParameters.get(CommandParameter.AUTHOR),
                 (String) actionParameters.get(CommandParameter.EDITION),
                 (int) actionParameters.get(CommandParameter.NUMBER_OF_PAGE));

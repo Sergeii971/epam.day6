@@ -7,7 +7,7 @@ import java.util.List;
 public class Library {
     private static Library instance;
 
-    private List<Book> books;
+    private List<CustomBook> books;
 
     private Library() {
         books = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Library {
         return instance;
     }
 
-    public boolean addBook(Book book) {
+    public boolean addBook(CustomBook book) {
         boolean result = true;
 
         if (books.contains(book)) {
@@ -31,7 +31,7 @@ public class Library {
         return result;
     }
 
-    public boolean removeBook(Book book) {
+    public boolean removeBook(CustomBook book) {
         boolean result = true;
         if (!books.contains(book)) {
            result = false;
@@ -45,7 +45,7 @@ public class Library {
         books.removeAll(books);
     }
 
-    public List<Book> getBooks() {
+    public List<CustomBook> getBooks() {
         return Collections.unmodifiableList(books);
     }
 

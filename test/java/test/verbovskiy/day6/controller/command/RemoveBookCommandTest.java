@@ -3,7 +3,7 @@ package test.verbovskiy.day6.controller.command;
 import com.verbovskiy.day6.controller.command.ActionCommand;
 import com.verbovskiy.day6.controller.command.CommandParameter;
 import com.verbovskiy.day6.controller.command.impl.RemoveBookCommand;
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 import com.verbovskiy.day6.model.entity.Library;
 import com.verbovskiy.day6.util.IdGenerator;
 import org.testng.annotations.AfterMethod;
@@ -26,9 +26,9 @@ public class RemoveBookCommandTest {
 
     @Test
     public void executePositiveTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 200);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 100);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
@@ -46,9 +46,9 @@ public class RemoveBookCommandTest {
 
     @Test
     public void executeNegativeTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 200);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 100);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);

@@ -1,7 +1,7 @@
 package test.verbovskiy.day6.model.service;
 
 import com.verbovskiy.day6.exception.ServiceException;
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 import com.verbovskiy.day6.model.entity.Library;
 import com.verbovskiy.day6.model.service.LibraryService;
 import com.verbovskiy.day6.util.IdGenerator;
@@ -35,16 +35,16 @@ public class LibraryServiceTest {
 
     @Test
     public void findByIdPositiveTest() throws ServiceException {
-        Book actual = libraryService.findById(IdGenerator.createId());
-        Book expected = new Book();
+        CustomBook actual = libraryService.findById(IdGenerator.createId());
+        CustomBook expected = new CustomBook();
         assertEquals(actual, expected);
     }
 
     @Test
     public void findByIdNegativeTest() throws ServiceException {
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book actual = libraryService.findById(IdGenerator.createId());
-        Book expected = book2;
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook actual = libraryService.findById(IdGenerator.createId());
+        CustomBook expected = book2;
         assertNotEquals(actual, expected);
     }
 
@@ -55,28 +55,28 @@ public class LibraryServiceTest {
 
     @Test
     public void findByNamePositiveTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByName("Book2");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByName("Book2");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book2);
         assertEquals(actual, expected);
     }
 
     @Test
     public void findByNameNegativeTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByName("Book2");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByName("Book2");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         assertNotEquals(actual, expected);
     }
@@ -88,28 +88,28 @@ public class LibraryServiceTest {
 
     @Test
     public void findByAuthorPositiveTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByAuthor("Dima");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByAuthor("Dima");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book2);
         assertEquals(actual, expected);
     }
 
     @Test
     public void findByAuthorNegativeTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByAuthor("Dima");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByAuthor("Dima");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         assertNotEquals(actual, expected);
     }
@@ -121,28 +121,28 @@ public class LibraryServiceTest {
 
     @Test
     public void findByEditionPositiveTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByEdition("New-York");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByEdition("New-York");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book2);
         assertEquals(actual, expected);
     }
 
     @Test
     public void findByEditionNegativeTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByEdition("New_York");
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByEdition("New_York");
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         assertNotEquals(actual, expected);
     }
@@ -154,28 +154,28 @@ public class LibraryServiceTest {
 
     @Test
     public void findByPageNumberPositiveTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByPageNumber(150);
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByPageNumber(150);
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book2);
         assertEquals(actual, expected);
     }
 
     @Test
     public void findByPageNumberNegativeTest() throws ServiceException {
-        Book book1 = new Book("Book1", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book3", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book1", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book3", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.findByPageNumber(150);
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.findByPageNumber(150);
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         assertNotEquals(actual, expected);
     }
@@ -187,14 +187,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByNamePositiveTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByName();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByName();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book3);
         expected.add(book2);
         expected.add(book1);
@@ -203,14 +203,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByNameNegativeTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByName();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByName();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book3);
         expected.add(book1);
         expected.add(book2);
@@ -219,14 +219,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByAuthorPositiveTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByAuthor();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByAuthor();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book2);
         expected.add(book1);
         expected.add(book3);
@@ -235,14 +235,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByAuthorNegativeTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByAuthor();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByAuthor();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book2);
         expected.add(book3);
@@ -251,14 +251,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByEditionPositiveTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByEdition();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByEdition();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book3);
         expected.add(book1);
         expected.add(book2);
@@ -267,14 +267,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByEditionNegativeTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 100);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 200);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 100);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 200);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByEdition();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByEdition();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book2);
         expected.add(book3);
@@ -283,14 +283,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByPageNumberPositiveTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 200);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 100);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByPageNumber();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByPageNumber();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book3);
         expected.add(book2);
         expected.add(book1);
@@ -299,14 +299,14 @@ public class LibraryServiceTest {
 
     @Test
     public void sortBooksByPageNumberNegativeTest() {
-        Book book1 = new Book("Book3", "Ivan", "Moscow", 200);
-        Book book2 = new Book("Book2", "Dima", "New-York", 150);
-        Book book3 = new Book("Book1", "Sasha", "Minsk", 100);
+        CustomBook book1 = new CustomBook("Book3", "Ivan", "Moscow", 200);
+        CustomBook book2 = new CustomBook("Book2", "Dima", "New-York", 150);
+        CustomBook book3 = new CustomBook("Book1", "Sasha", "Minsk", 100);
         Library.getInstance().addBook(book1);
         Library.getInstance().addBook(book2);
         Library.getInstance().addBook(book3);
-        List<Book> actual = libraryService.sortBooksByPageNumber();
-        List<Book> expected = new ArrayList<>();
+        List<CustomBook> actual = libraryService.sortBooksByPageNumber();
+        List<CustomBook> expected = new ArrayList<>();
         expected.add(book1);
         expected.add(book2);
         expected.add(book3);

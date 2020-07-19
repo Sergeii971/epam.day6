@@ -3,7 +3,6 @@ package test.verbovskiy.day6.controller.command;
 import com.verbovskiy.day6.controller.command.ActionCommand;
 import com.verbovskiy.day6.controller.command.CommandParameter;
 import com.verbovskiy.day6.controller.command.impl.AddBookCommand;
-import com.verbovskiy.day6.model.entity.Book;
 import com.verbovskiy.day6.model.entity.Library;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;

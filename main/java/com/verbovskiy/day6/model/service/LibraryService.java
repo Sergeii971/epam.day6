@@ -4,13 +4,13 @@ import com.verbovskiy.day6.exception.DaoException;
 import com.verbovskiy.day6.exception.ServiceException;
 import com.verbovskiy.day6.model.dao.BookListDao;
 import com.verbovskiy.day6.model.dao.impl.BookListDaoImpl;
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 
 import java.util.List;
 import java.util.UUID;
 
 public class LibraryService {
-    public void add(Book book) throws ServiceException {
+    public void add(CustomBook book) throws ServiceException {
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             bookListDao.add(book);
@@ -19,7 +19,7 @@ public class LibraryService {
         }
     }
 
-    public void remove(Book book) throws ServiceException {
+    public void remove(CustomBook book) throws ServiceException {
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             bookListDao.remove(book);
@@ -28,8 +28,8 @@ public class LibraryService {
         }
     }
 
-    public Book findById(UUID id) throws ServiceException {
-        Book book;
+    public CustomBook findById(UUID id) throws ServiceException {
+        CustomBook book;
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             book = bookListDao.findById(id);
@@ -39,8 +39,8 @@ public class LibraryService {
         return book;
     }
 
-    public List<Book> findByName(String name) throws ServiceException {
-        List<Book> foundBooks;
+    public List<CustomBook> findByName(String name) throws ServiceException {
+        List<CustomBook> foundBooks;
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             foundBooks = bookListDao.findByName(name);
@@ -50,8 +50,8 @@ public class LibraryService {
         return foundBooks;
     }
 
-    public List<Book> findByAuthor(String author) throws ServiceException {
-        List<Book> foundBooks;
+    public List<CustomBook> findByAuthor(String author) throws ServiceException {
+        List<CustomBook> foundBooks;
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             foundBooks = bookListDao.findByAuthor(author);
@@ -61,8 +61,8 @@ public class LibraryService {
         return foundBooks;
     }
 
-    public List<Book> findByEdition(String edition) throws ServiceException {
-        List<Book> foundBooks;
+    public List<CustomBook> findByEdition(String edition) throws ServiceException {
+        List<CustomBook> foundBooks;
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             foundBooks = bookListDao.findByEdition(edition);
@@ -72,8 +72,8 @@ public class LibraryService {
         return foundBooks;
     }
 
-    public List<Book> findByPageNumber(int pageNumber) throws ServiceException {
-        List<Book> foundBooks;
+    public List<CustomBook> findByPageNumber(int pageNumber) throws ServiceException {
+        List<CustomBook> foundBooks;
         try {
             BookListDao bookListDao = new BookListDaoImpl();
             foundBooks = bookListDao.findByPageNumber(pageNumber);
@@ -83,29 +83,29 @@ public class LibraryService {
         return foundBooks;
     }
 
-    public List<Book> sortBooksByName() {
+    public List<CustomBook> sortBooksByName() {
         BookListDao bookListDao = new BookListDaoImpl();
 
         return bookListDao.sortBooksByName();
     }
 
-    public List<Book> sortBooksByAuthor() {
+    public List<CustomBook> sortBooksByAuthor() {
         BookListDao bookListDao = new BookListDaoImpl();
-        List<Book> foundBooks = bookListDao.sortBooksByAuthor();
+        List<CustomBook> foundBooks = bookListDao.sortBooksByAuthor();
 
         return foundBooks;
     }
 
-    public List<Book> sortBooksByEdition() {
+    public List<CustomBook> sortBooksByEdition() {
         BookListDao bookListDao = new BookListDaoImpl();
-        List<Book> foundBooks = bookListDao.sortBooksByEdition();
+        List<CustomBook> foundBooks = bookListDao.sortBooksByEdition();
 
         return foundBooks;
     }
 
-    public List<Book> sortBooksByPageNumber() {
+    public List<CustomBook> sortBooksByPageNumber() {
         BookListDao bookListDao = new BookListDaoImpl();
-        List<Book> foundBooks = bookListDao.sortBooksByPageNumber();
+        List<CustomBook> foundBooks = bookListDao.sortBooksByPageNumber();
 
         return foundBooks;
     }

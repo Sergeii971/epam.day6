@@ -1,12 +1,12 @@
 package com.verbovskiy.day6.model.comparator;
 
-import com.verbovskiy.day6.model.entity.Book;
+import com.verbovskiy.day6.model.entity.CustomBook;
 
 import java.util.Comparator;
 
-public class AuthorComparator implements Comparator<Book> {
+public class AuthorComparator implements Comparator<CustomBook> {
     @Override
-    public int compare(Book book1, Book book2) {
+    public int compare(CustomBook book1, CustomBook book2) {
         return book1.getAuthor().compareTo(book2.getAuthor());
     }
 }

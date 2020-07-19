@@ -4,20 +4,20 @@ import com.verbovskiy.day6.util.IdGenerator;
 
 import java.util.UUID;
 
-public class Book {
+public class CustomBook {
     private UUID id;
     private String name;
     private String author;
     private String edition;
     private int pageNumber;
 
-    public Book() {
+    public CustomBook() {
         name = "";
         author = "";
         edition = "";
     }
 
-    public Book(String name, String author, String edition, int pageNumber) {
+    public CustomBook(String name, String author, String edition, int pageNumber) {
         id = IdGenerator.createId();
         this.name = name;
         this.author = author;
@@ -73,7 +73,7 @@ public class Book {
         if (this == null || this.getClass() != o.getClass()) {
             return false;
         }
-        Book book = (Book) o;
+        CustomBook book = (CustomBook) o;
         
         if (id == null) {
             if (book.id != null) {
